@@ -120,10 +120,10 @@ ge_comments = textwrap.dedent("""\
     */
     """)
 
-xmr_comments = textwrap.dedent("""\
+xmrd_comments = textwrap.dedent("""\
     /*
      *
-     * xmr specific code
+     * xmrd specific code
      *
      *
     This code is from the original CryptoNote.
@@ -171,7 +171,7 @@ if a == "m":
         os.system("cp "+g+" "+g.replace("fe", "fe.monerodollar."))
     qhasmToC("fe_pow22523.c", "pow22523.h", "fe.monerodollar._pow22523.c")
     qhasmToC("fe_invert.c", "pow225521.h", "fe.monerodollar._invert.c")
-    os.system("rm fe.monerodollar._isnonzero.c") #since it's modified, it's in xmrSpecificOld
+    os.system("rm fe.monerodollar._isnonzero.c") #since it's modified, it's in xmrdSpecificOld
     os.system("cat fe.monerodollar.*.c | grep -v '^#include' > fe.monerodollar.c")
 
     #sc things
@@ -180,7 +180,7 @@ if a == "m":
     #so you don't get multiple "loads"
     os.system("tail -n +24 sc_reduce.c > sc.monerodollar._reduce.c") #also good on linux
     os.system("tail -n +24 sc_muladd.c > sc.monerodollar._muladd.c")
-    os.system("tail -n +31 sc_sub.xmr.c > sc.monerodollar._sub.xmr.c") #careful with the tails if you change these files!
+    os.system("tail -n +31 sc_sub.xmrd.c > sc.monerodollar._sub.xmrd.c") #careful with the tails if you change these files!
     os.system("cat sc.monerodollar.*.c | grep -v '^#include' > sc.monerodollar.c")
 
     #ge stuff
@@ -223,9 +223,9 @@ if a == "m":
             text_file.write(ge_comments)
     with open("sc.monerodollar.comments", "w") as text_file:
             text_file.write(sc_comments)
-    with open("xmr.monerodollar.comments", "w") as text_file:
-            text_file.write(xmr_comments)
-    with open("xmr.monerodollar.predeclarations", "w") as text_file:
+    with open("xmrd.monerodollar.comments", "w") as text_file:
+            text_file.write(xmrd_comments)
+    with open("xmrd.monerodollar.predeclarations", "w") as text_file:
             text_file.write(predeclarations)
 
 
@@ -238,7 +238,7 @@ if a == "m":
         text_file.write(crypto_ops_includes)
 
     #note you may have duplicates of load_3, load_4 and possibly some other functions ... 
-    os.system("cat monerodollar.license crypto-ops.monerodollar.includes xmr.monerodollar.predeclarations fe.monerodollar.comments fe.monerodollar.c sc.monerodollar.comments sc.monerodollar.c ge.monerodollar.comments ge.monerodollar.c xmr.monerodollar.comments xmrSpecificOld.c > crypto-ops.c")
+    os.system("cat monerodollar.license crypto-ops.monerodollar.includes xmrd.monerodollar.predeclarations fe.monerodollar.comments fe.monerodollar.c sc.monerodollar.comments sc.monerodollar.c ge.monerodollar.comments ge.monerodollar.c xmrd.monerodollar.comments xmrdSpecificOld.c > crypto-ops.c")
 
     #monerodollar specific header files
     #print("making crypto-ops-tmp.h")
