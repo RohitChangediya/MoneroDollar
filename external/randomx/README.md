@@ -144,4 +144,4 @@ Author's XMR address:
 ```
 845xHUh5GvfHwc2R8DVJCE7BT2sd4YEcmjG8GNSdmeNsP5DTEjXd1CNgxTcjHjiFuthRHAoVEJjM7GyKzQKLJtbd56xbh7V
 ```
-Total donations received: ~3.86 XMR (as of 30th August 2019). Thanks to all contributors.
+Total donations received: ~3.86 XMRD (as of 30th August 2019). Thanks to all contributors.

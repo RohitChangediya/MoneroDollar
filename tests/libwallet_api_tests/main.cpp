@@ -81,9 +81,9 @@ const char * TESTNET_WALLET_PASS = "";
 std::string CURRENT_SRC_WALLET;
 std::string CURRENT_DST_WALLET;
 
-const uint64_t AMOUNT_10XMR =  10000000000000L;
-const uint64_t AMOUNT_5XMR  =  5000000000000L;
-const uint64_t AMOUNT_1XMR  =  1000000000000L;
+const uint64_t AMOUNT_10XMRD =  10000000000000L;
+const uint64_t AMOUNT_5XMRD  =  5000000000000L;
+const uint64_t AMOUNT_1XMRD  =  1000000000000L;
 
 const std::string PAYMENT_ID_EMPTY = "";
 
@@ -552,12 +552,12 @@ TEST_F(WalletTest1, WalletRefresh)
 
 TEST_F(WalletTest1, WalletConvertsToString)
 {
-    std::string strAmount = MoneroDollar::Wallet::displayAmount(AMOUNT_5XMR);
-    ASSERT_TRUE(AMOUNT_5XMR == MoneroDollar::Wallet::amountFromString(strAmount));
+    std::string strAmount = MoneroDollar::Wallet::displayAmount(AMOUNT_5XMRD);
+    ASSERT_TRUE(AMOUNT_5XMRD == MoneroDollar::Wallet::amountFromString(strAmount));
 
-    ASSERT_TRUE(AMOUNT_5XMR == MoneroDollar::Wallet::amountFromDouble(5.0));
-    ASSERT_TRUE(AMOUNT_10XMR == MoneroDollar::Wallet::amountFromDouble(10.0));
-    ASSERT_TRUE(AMOUNT_1XMR == MoneroDollar::Wallet::amountFromDouble(1.0));
+    ASSERT_TRUE(AMOUNT_5XMRD == MoneroDollar::Wallet::amountFromDouble(5.0));
+    ASSERT_TRUE(AMOUNT_10XMRD == MoneroDollar::Wallet::amountFromDouble(10.0));
+    ASSERT_TRUE(AMOUNT_1XMRD == MoneroDollar::Wallet::amountFromDouble(1.0));
 
 }
 
@@ -579,7 +579,7 @@ TEST_F(WalletTest1, WalletTransaction)
 
     MoneroDollar::PendingTransaction * transaction = wallet1->createTransaction(recepient_address,
                                                                              PAYMENT_ID_EMPTY,
-                                                                             AMOUNT_10XMR,
+                                                                             AMOUNT_10XMRD,
                                                                              MIXIN_COUNT,
                                                                              MoneroDollar::PendingTransaction::Priority_Medium,
                                                                              0,
@@ -588,7 +588,7 @@ TEST_F(WalletTest1, WalletTransaction)
     wallet1->refresh();
 
     ASSERT_TRUE(wallet1->balance(0) == balance);
-    ASSERT_TRUE(transaction->amount() == AMOUNT_10XMR);
+    ASSERT_TRUE(transaction->amount() == AMOUNT_10XMRD);
     ASSERT_TRUE(transaction->commit());
     ASSERT_FALSE(wallet1->balance(0) == balance);
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
@@ -622,7 +622,7 @@ TEST_F(WalletTest1, WalletTransactionWithMixin)
         std::cerr << "Transaction mixin count: " << mixin << std::endl;
 	
         MoneroDollar::PendingTransaction * transaction = wallet1->createTransaction(
-                    recepient_address, payment_id, AMOUNT_5XMR, mixin, MoneroDollar::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
+                    recepient_address, payment_id, AMOUNT_5XMRD, mixin, MoneroDollar::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
 
         std::cerr << "Transaction status: " << transaction->status() << std::endl;
         std::cerr << "Transaction fee: " << MoneroDollar::Wallet::displayAmount(transaction->fee()) << std::endl;
@@ -664,7 +664,7 @@ TEST_F(WalletTest1, WalletTransactionWithPriority)
         std::cerr << "Transaction priority: " << *it << std::endl;
 	
         MoneroDollar::PendingTransaction * transaction = wallet1->createTransaction(
-                    recepient_address, payment_id, AMOUNT_5XMR, mixin, *it, 0, std::set<uint32_t>{});
+                    recepient_address, payment_id, AMOUNT_5XMRD, mixin, *it, 0, std::set<uint32_t>{});
         std::cerr << "Transaction status: " << transaction->status() << std::endl;
         std::cerr << "Transaction fee: " << MoneroDollar::Wallet::displayAmount(transaction->fee()) << std::endl;
         std::cerr << "Transaction error: " << transaction->errorString() << std::endl;
@@ -720,7 +720,7 @@ TEST_F(WalletTest1, WalletTransactionAndHistory)
 
     MoneroDollar::PendingTransaction * tx = wallet_src->createTransaction(wallet4_addr,
                                                                        PAYMENT_ID_EMPTY,
-                                                                       AMOUNT_10XMR * 5, 1, MoneroDollar::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
+                                                                       AMOUNT_10XMRD * 5, 1, MoneroDollar::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
 
     ASSERT_TRUE(tx->status() == MoneroDollar::PendingTransaction::Status_Ok);
     ASSERT_TRUE(tx->commit());
@@ -762,7 +762,7 @@ TEST_F(WalletTest1, WalletTransactionWithPaymentId)
 
     MoneroDollar::PendingTransaction * tx = wallet_src->createTransaction(wallet4_addr,
                                                                        payment_id,
-                                                                       AMOUNT_1XMR, 1, MoneroDollar::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
+                                                                       AMOUNT_1XMRD, 1, MoneroDollar::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
 
     ASSERT_TRUE(tx->status() == MoneroDollar::PendingTransaction::Status_Ok);
     ASSERT_TRUE(tx->commit());
@@ -929,7 +929,7 @@ TEST_F(WalletTest2, WalletCallbackSent)
     std::cout << "** Balance: " << wallet_src->displayAmount(wallet_src->balance(0)) <<  std::endl;
     MoneroDollar::Wallet * wallet_dst = wmgr->openWallet(CURRENT_DST_WALLET, TESTNET_WALLET_PASS, MoneroDollar::NetworkType::TESTNET);
 
-    uint64_t amount = AMOUNT_1XMR * 5;
+    uint64_t amount = AMOUNT_1XMRD * 5;
     std::cout << "** Sending " << MoneroDollar::Wallet::displayAmount(amount) << " to " << wallet_dst->mainAddress();
 
 
@@ -972,7 +972,7 @@ TEST_F(WalletTest2, WalletCallbackReceived)
     std::cout << "** Balance dst1: " << wallet_dst->displayAmount(wallet_dst->balance(0)) <<  std::endl;
     std::unique_ptr<MyWalletListener> wallet_dst_listener (new MyWalletListener(wallet_dst));
 
-    uint64_t amount = AMOUNT_1XMR * 5;
+    uint64_t amount = AMOUNT_1XMRD * 5;
     std::cout << "** Sending " << MoneroDollar::Wallet::displayAmount(amount) << " to " << wallet_dst->mainAddress();
     MoneroDollar::PendingTransaction * tx = wallet_src->createTransaction(wallet_dst->mainAddress(),
                                                                        PAYMENT_ID_EMPTY,

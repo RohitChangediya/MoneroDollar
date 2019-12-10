@@ -29,7 +29,7 @@
     },
     {
         "name": "MoneroDollar",
-        "shortcut": "XMR",
+        "shortcut": "XMRD",
         "slip44": 128,
         "curve": "ed25519",
         "decimals": 12,
