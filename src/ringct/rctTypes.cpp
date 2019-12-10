@@ -35,8 +35,8 @@
 using namespace crypto;
 using namespace std;
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "ringct"
+#undef MONERODOLLAR_DEFAULT_LOG_CATEGORY
+#define MONERODOLLAR_DEFAULT_LOG_CATEGORY "ringct"
 
 namespace rct {
 

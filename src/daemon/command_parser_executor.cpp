@@ -31,8 +31,8 @@
 #include "version.h"
 #include "daemon/command_parser_executor.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "daemon"
+#undef MONERODOLLAR_DEFAULT_LOG_CATEGORY
+#define MONERODOLLAR_DEFAULT_LOG_CATEGORY "daemon"
 
 namespace daemonize {
 
@@ -803,7 +803,7 @@ bool t_command_parser_executor::rpc_payments(const std::vector<std::string>& arg
 
 bool t_command_parser_executor::version(const std::vector<std::string>& args)
 {
-  std::cout << "MoneroDollar '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")" << std::endl;
+  std::cout << "MoneroDollar '" << MONERODOLLAR_RELEASE_NAME << "' (v" << MONERODOLLAR_VERSION_FULL << ")" << std::endl;
   return true;
 }
 

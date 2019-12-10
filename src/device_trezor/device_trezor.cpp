@@ -34,8 +34,8 @@ namespace trezor {
 
 #ifdef WITH_DEVICE_TREZOR
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "device.trezor"
+#undef MONERODOLLAR_DEFAULT_LOG_CATEGORY
+#define MONERODOLLAR_DEFAULT_LOG_CATEGORY "device.trezor"
 
 #define HW_TREZOR_NAME "Trezor"
 

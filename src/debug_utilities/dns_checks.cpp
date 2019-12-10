@@ -37,8 +37,8 @@
 #include "common/dns_utils.h"
 #include "version.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "debugtools.dnschecks"
+#undef MONERODOLLAR_DEFAULT_LOG_CATEGORY
+#define MONERODOLLAR_DEFAULT_LOG_CATEGORY "debugtools.dnschecks"
 
 namespace po = boost::program_options;
 
@@ -121,13 +121,13 @@ int main(int argc, char* argv[])
 
   if (command_line::get_arg(vm, command_line::arg_help))
   {
-    std::cout << "MoneroDollar '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")" << ENDL << ENDL;
+    std::cout << "MoneroDollar '" << MONERODOLLAR_RELEASE_NAME << "' (v" << MONERODOLLAR_VERSION_FULL << ")" << ENDL << ENDL;
     std::cout << desc_options << std::endl;
     return 1;
   }
 
   mlog_configure("", true);
-  mlog_set_categories("+" MONERO_DEFAULT_LOG_CATEGORY ":INFO");
+  mlog_set_categories("+" MONERODOLLAR_DEFAULT_LOG_CATEGORY ":INFO");
 
   lookup(LOOKUP_A, {"seeds.monerodollarseeds.se", "seeds.monerodollarseeds.ae.org", "seeds.monerodollarseeds.ch", "seeds.monerodollarseeds.li"});
 

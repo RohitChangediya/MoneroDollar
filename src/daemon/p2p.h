@@ -34,8 +34,8 @@
 #include "p2p/net_node.h"
 #include "daemon/protocol.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "daemon"
+#undef MONERODOLLAR_DEFAULT_LOG_CATEGORY
+#define MONERODOLLAR_DEFAULT_LOG_CATEGORY "daemon"
 
 namespace daemonize
 {
