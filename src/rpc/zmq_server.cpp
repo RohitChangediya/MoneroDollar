@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2019, The Monero Project
+// Copyright (c) 2016-2019, The MoneroDollar Project
 // 
 // All rights reserved.
 // 

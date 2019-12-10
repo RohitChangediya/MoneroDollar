@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The Monero Project
+// Copyright (c) 2017-2019, The MoneroDollar Project
 //
 // All rights reserved.
 //
@@ -108,60 +108,60 @@ namespace chacha {
 // Cold Key image sync
 namespace ki {
 
-  using MoneroTransferDetails = messages::monerodollar::MoneroKeyImageSyncStepRequest_MoneroTransferDetails;
-  using MoneroSubAddressIndicesList = messages::monerodollar::MoneroKeyImageExportInitRequest_MoneroSubAddressIndicesList;
-  using MoneroExportedKeyImage = messages::monerodollar::MoneroKeyImageSyncStepAck_MoneroExportedKeyImage;
+  using MoneroDollarTransferDetails = messages::monerodollar::MoneroDollarKeyImageSyncStepRequest_MoneroDollarTransferDetails;
+  using MoneroDollarSubAddressIndicesList = messages::monerodollar::MoneroDollarKeyImageExportInitRequest_MoneroDollarSubAddressIndicesList;
+  using MoneroDollarExportedKeyImage = messages::monerodollar::MoneroDollarKeyImageSyncStepAck_MoneroDollarExportedKeyImage;
   using exported_key_image = hw::device_cold::exported_key_image;
 
   /**
-   * Converts transfer details to the MoneroTransferDetails required for KI sync
+   * Converts transfer details to the MoneroDollarTransferDetails required for KI sync
    */
   bool key_image_data(wallet_shim * wallet,
                       const std::vector<tools::wallet2::transfer_details> & transfers,
-                      std::vector<MoneroTransferDetails> & res);
+                      std::vector<MoneroDollarTransferDetails> & res);
 
   /**
-   * Computes a hash over MoneroTransferDetails. Commitment used in the KI sync.
+   * Computes a hash over MoneroDollarTransferDetails. Commitment used in the KI sync.
    */
-  std::string compute_hash(const MoneroTransferDetails & rr);
+  std::string compute_hash(const MoneroDollarTransferDetails & rr);
 
   /**
    * Generates KI sync request with commitments computed.
    */
-  void generate_commitment(std::vector<MoneroTransferDetails> & mtds,
+  void generate_commitment(std::vector<MoneroDollarTransferDetails> & mtds,
                            const std::vector<tools::wallet2::transfer_details> & transfers,
-                           std::shared_ptr<messages::monerodollar::MoneroKeyImageExportInitRequest> & req);
+                           std::shared_ptr<messages::monerodollar::MoneroDollarKeyImageExportInitRequest> & req);
 
   /**
    * Processes Live refresh step response, parses KI, checks the signature
    */
   void live_refresh_ack(const ::crypto::secret_key & view_key_priv,
                         const ::crypto::public_key& out_key,
-                        const std::shared_ptr<messages::monerodollar::MoneroLiveRefreshStepAck> & ack,
+                        const std::shared_ptr<messages::monerodollar::MoneroDollarLiveRefreshStepAck> & ack,
                         ::cryptonote::keypair& in_ephemeral,
                         ::crypto::key_image& ki);
 }
 
 // Cold transaction signing
 namespace tx {
-  using TsxData = messages::monerodollar::MoneroTransactionInitRequest_MoneroTransactionData;
-  using MoneroTransactionDestinationEntry = messages::monerodollar::MoneroTransactionDestinationEntry;
-  using MoneroAccountPublicAddress = messages::monerodollar::MoneroTransactionDestinationEntry_MoneroAccountPublicAddress;
-  using MoneroTransactionSourceEntry = messages::monerodollar::MoneroTransactionSourceEntry;
-  using MoneroMultisigKLRki = messages::monerodollar::MoneroTransactionSourceEntry_MoneroMultisigKLRki;
-  using MoneroOutputEntry = messages::monerodollar::MoneroTransactionSourceEntry_MoneroOutputEntry;
-  using MoneroRctKey = messages::monerodollar::MoneroTransactionSourceEntry_MoneroOutputEntry_MoneroRctKeyPublic;
-  using MoneroRsigData = messages::monerodollar::MoneroTransactionRsigData;
+  using TsxData = messages::monerodollar::MoneroDollarTransactionInitRequest_MoneroDollarTransactionData;
+  using MoneroDollarTransactionDestinationEntry = messages::monerodollar::MoneroDollarTransactionDestinationEntry;
+  using MoneroDollarAccountPublicAddress = messages::monerodollar::MoneroDollarTransactionDestinationEntry_MoneroDollarAccountPublicAddress;
+  using MoneroDollarTransactionSourceEntry = messages::monerodollar::MoneroDollarTransactionSourceEntry;
+  using MoneroDollarMultisigKLRki = messages::monerodollar::MoneroDollarTransactionSourceEntry_MoneroDollarMultisigKLRki;
+  using MoneroDollarOutputEntry = messages::monerodollar::MoneroDollarTransactionSourceEntry_MoneroDollarOutputEntry;
+  using MoneroDollarRctKey = messages::monerodollar::MoneroDollarTransactionSourceEntry_MoneroDollarOutputEntry_MoneroDollarRctKeyPublic;
+  using MoneroDollarRsigData = messages::monerodollar::MoneroDollarTransactionRsigData;
 
   using tx_construction_data = tools::wallet2::tx_construction_data;
   using unsigned_tx_set = tools::wallet2::unsigned_tx_set;
 
-  void translate_address(MoneroAccountPublicAddress * dst, const cryptonote::account_public_address * src);
-  void translate_dst_entry(MoneroTransactionDestinationEntry * dst, const cryptonote::tx_destination_entry * src);
-  void translate_src_entry(MoneroTransactionSourceEntry * dst, const cryptonote::tx_source_entry * src);
-  void translate_klrki(MoneroMultisigKLRki * dst, const rct::multisig_kLRki * src);
-  void translate_rct_key(MoneroRctKey * dst, const rct::ctkey * src);
-  std::string hash_addr(const MoneroAccountPublicAddress * addr, boost::optional<uint64_t> amount = boost::none, boost::optional<bool> is_subaddr = boost::none);
+  void translate_address(MoneroDollarAccountPublicAddress * dst, const cryptonote::account_public_address * src);
+  void translate_dst_entry(MoneroDollarTransactionDestinationEntry * dst, const cryptonote::tx_destination_entry * src);
+  void translate_src_entry(MoneroDollarTransactionSourceEntry * dst, const cryptonote::tx_source_entry * src);
+  void translate_klrki(MoneroDollarMultisigKLRki * dst, const rct::multisig_kLRki * src);
+  void translate_rct_key(MoneroDollarRctKey * dst, const rct::ctkey * src);
+  std::string hash_addr(const MoneroDollarAccountPublicAddress * addr, boost::optional<uint64_t> amount = boost::none, boost::optional<bool> is_subaddr = boost::none);
   std::string hash_addr(const std::string & spend_key, const std::string & view_key, boost::optional<uint64_t> amount = boost::none, boost::optional<bool> is_subaddr = boost::none);
   std::string hash_addr(const ::crypto::public_key * spend_key, const ::crypto::public_key * view_key, boost::optional<uint64_t> amount = boost::none, boost::optional<bool> is_subaddr = boost::none);
   ::crypto::secret_key compute_enc_key(const ::crypto::secret_key & private_view_key, const std::string & aux, const std::string & salt);
@@ -179,7 +179,7 @@ namespace tx {
     unsigned rsig_type;
     int bp_version;
     std::vector<uint64_t> grouping_vct;
-    std::shared_ptr<MoneroRsigData> rsig_param;
+    std::shared_ptr<MoneroDollarRsigData> rsig_param;
     size_t cur_input_idx;
     size_t cur_output_idx;
     size_t cur_batch_idx;
@@ -229,42 +229,42 @@ namespace tx {
     void extract_payment_id();
     void compute_integrated_indices(TsxData * tsx_data);
     bool should_compute_bp_now() const;
-    void compute_bproof(messages::monerodollar::MoneroTransactionRsigData & rsig_data);
+    void compute_bproof(messages::monerodollar::MoneroDollarTransactionRsigData & rsig_data);
     void process_bproof(rct::Bulletproof & bproof);
 
   public:
     Signer(wallet_shim * wallet2, const unsigned_tx_set * unsigned_tx, size_t tx_idx = 0, hw::tx_aux_data * aux_data = nullptr);
 
-    std::shared_ptr<messages::monerodollar::MoneroTransactionInitRequest> step_init();
-    void step_init_ack(std::shared_ptr<const messages::monerodollar::MoneroTransactionInitAck> ack);
+    std::shared_ptr<messages::monerodollar::MoneroDollarTransactionInitRequest> step_init();
+    void step_init_ack(std::shared_ptr<const messages::monerodollar::MoneroDollarTransactionInitAck> ack);
 
-    std::shared_ptr<messages::monerodollar::MoneroTransactionSetInputRequest> step_set_input(size_t idx);
-    void step_set_input_ack(std::shared_ptr<const messages::monerodollar::MoneroTransactionSetInputAck> ack);
+    std::shared_ptr<messages::monerodollar::MoneroDollarTransactionSetInputRequest> step_set_input(size_t idx);
+    void step_set_input_ack(std::shared_ptr<const messages::monerodollar::MoneroDollarTransactionSetInputAck> ack);
 
     void sort_ki();
-    std::shared_ptr<messages::monerodollar::MoneroTransactionInputsPermutationRequest> step_permutation();
-    void step_permutation_ack(std::shared_ptr<const messages::monerodollar::MoneroTransactionInputsPermutationAck> ack);
+    std::shared_ptr<messages::monerodollar::MoneroDollarTransactionInputsPermutationRequest> step_permutation();
+    void step_permutation_ack(std::shared_ptr<const messages::monerodollar::MoneroDollarTransactionInputsPermutationAck> ack);
 
-    std::shared_ptr<messages::monerodollar::MoneroTransactionInputViniRequest> step_set_vini_input(size_t idx);
-    void step_set_vini_input_ack(std::shared_ptr<const messages::monerodollar::MoneroTransactionInputViniAck> ack);
+    std::shared_ptr<messages::monerodollar::MoneroDollarTransactionInputViniRequest> step_set_vini_input(size_t idx);
+    void step_set_vini_input_ack(std::shared_ptr<const messages::monerodollar::MoneroDollarTransactionInputViniAck> ack);
 
-    std::shared_ptr<messages::monerodollar::MoneroTransactionAllInputsSetRequest> step_all_inputs_set();
-    void step_all_inputs_set_ack(std::shared_ptr<const messages::monerodollar::MoneroTransactionAllInputsSetAck> ack);
+    std::shared_ptr<messages::monerodollar::MoneroDollarTransactionAllInputsSetRequest> step_all_inputs_set();
+    void step_all_inputs_set_ack(std::shared_ptr<const messages::monerodollar::MoneroDollarTransactionAllInputsSetAck> ack);
 
-    std::shared_ptr<messages::monerodollar::MoneroTransactionSetOutputRequest> step_set_output(size_t idx);
-    void step_set_output_ack(std::shared_ptr<const messages::monerodollar::MoneroTransactionSetOutputAck> ack);
+    std::shared_ptr<messages::monerodollar::MoneroDollarTransactionSetOutputRequest> step_set_output(size_t idx);
+    void step_set_output_ack(std::shared_ptr<const messages::monerodollar::MoneroDollarTransactionSetOutputAck> ack);
 
-    std::shared_ptr<messages::monerodollar::MoneroTransactionSetOutputRequest> step_rsig(size_t idx);
-    void step_set_rsig_ack(std::shared_ptr<const messages::monerodollar::MoneroTransactionSetOutputAck> ack);
+    std::shared_ptr<messages::monerodollar::MoneroDollarTransactionSetOutputRequest> step_rsig(size_t idx);
+    void step_set_rsig_ack(std::shared_ptr<const messages::monerodollar::MoneroDollarTransactionSetOutputAck> ack);
 
-    std::shared_ptr<messages::monerodollar::MoneroTransactionAllOutSetRequest> step_all_outs_set();
-    void step_all_outs_set_ack(std::shared_ptr<const messages::monerodollar::MoneroTransactionAllOutSetAck> ack, hw::device &hwdev);
+    std::shared_ptr<messages::monerodollar::MoneroDollarTransactionAllOutSetRequest> step_all_outs_set();
+    void step_all_outs_set_ack(std::shared_ptr<const messages::monerodollar::MoneroDollarTransactionAllOutSetAck> ack, hw::device &hwdev);
 
-    std::shared_ptr<messages::monerodollar::MoneroTransactionSignInputRequest> step_sign_input(size_t idx);
-    void step_sign_input_ack(std::shared_ptr<const messages::monerodollar::MoneroTransactionSignInputAck> ack);
+    std::shared_ptr<messages::monerodollar::MoneroDollarTransactionSignInputRequest> step_sign_input(size_t idx);
+    void step_sign_input_ack(std::shared_ptr<const messages::monerodollar::MoneroDollarTransactionSignInputAck> ack);
 
-    std::shared_ptr<messages::monerodollar::MoneroTransactionFinalRequest> step_final();
-    void step_final_ack(std::shared_ptr<const messages::monerodollar::MoneroTransactionFinalAck> ack);
+    std::shared_ptr<messages::monerodollar::MoneroDollarTransactionFinalRequest> step_final();
+    void step_final_ack(std::shared_ptr<const messages::monerodollar::MoneroDollarTransactionFinalAck> ack);
 
     std::string store_tx_aux_info();
 
@@ -312,14 +312,14 @@ namespace tx {
   // TX Key decryption
   void load_tx_key_data(hw::device_cold::tx_key_data_t & res, const std::string & data);
 
-  std::shared_ptr<messages::monerodollar::MoneroGetTxKeyRequest> get_tx_key(
+  std::shared_ptr<messages::monerodollar::MoneroDollarGetTxKeyRequest> get_tx_key(
       const hw::device_cold::tx_key_data_t & tx_data);
 
   void get_tx_key_ack(
       std::vector<::crypto::secret_key> & tx_keys,
       const std::string & tx_prefix_hash,
       const ::crypto::secret_key & view_key_priv,
-      std::shared_ptr<const messages::monerodollar::MoneroGetTxKeyAck> ack
+      std::shared_ptr<const messages::monerodollar::MoneroDollarGetTxKeyAck> ack
   );
 }
 

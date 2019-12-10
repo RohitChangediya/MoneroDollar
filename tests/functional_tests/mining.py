@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright (c) 2018 The Monero Project
+# Copyright (c) 2018 The MoneroDollar Project
 # 
 # All rights reserved.
 # 

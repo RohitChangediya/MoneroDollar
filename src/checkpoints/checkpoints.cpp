@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The MoneroDollar Project
 //
 // All rights reserved.
 //
@@ -254,7 +254,7 @@ namespace cryptonote
   {
     std::vector<std::string> records;
 
-    // All four MoneroPulse domains have DNSSEC on and valid
+    // All four MoneroDollarPulse domains have DNSSEC on and valid
     static const std::vector<std::string> dns_urls = { "checkpoints.monerodollarpulse.se"
 						     , "checkpoints.monerodollarpulse.org"
 						     , "checkpoints.monerodollarpulse.net"

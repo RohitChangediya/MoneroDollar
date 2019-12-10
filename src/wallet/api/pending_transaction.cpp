@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The MoneroDollar Project
 //
 // All rights reserved.
 //
@@ -43,7 +43,7 @@
 
 using namespace std;
 
-namespace Monero {
+namespace MoneroDollar {
 
 PendingTransaction::~PendingTransaction() {}
 
@@ -264,5 +264,5 @@ std::vector<std::string> PendingTransactionImpl::signersKeys() const {
 
 }
 
-namespace Bitmonerodollar = Monero;
+namespace Bitmonerodollar = MoneroDollar;
 

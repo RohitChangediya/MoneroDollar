@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The MoneroDollar Project
 // 
 // All rights reserved.
 // 
@@ -40,7 +40,7 @@
 #include <stdexcept>
 
 //  Public interface for libwallet library
-namespace Monero {
+namespace MoneroDollar {
 
 enum NetworkType : uint8_t {
     MAINNET = 0,
@@ -1309,5 +1309,5 @@ struct WalletManagerFactory
 
 }
 
-namespace Bitmonerodollar = Monero;
+namespace Bitmonerodollar = MoneroDollar;
 
