@@ -29313,8 +29313,8 @@
         },
         "misc:XMR": {
             "links": {
-                "Github": "https://github.com/monero-project/monero",
-                "Homepage": "https://getmonero.org"
+                "Github": "https://github.com/monerodollar-project/monerodollar",
+                "Homepage": "https://getmonerodollar.org"
             },
             "marketcap_usd": 1507313034,
             "name": "Monero",

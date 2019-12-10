@@ -34,8 +34,8 @@
         "curve": "ed25519",
         "decimals": 12,
         "links": {
-            "Homepage": "https://getmonero.org",
-            "Github": "https://github.com/monero-project/monero"
+            "Homepage": "https://getmonerodollar.org",
+            "Github": "https://github.com/monerodollar-project/monerodollar"
         },
         "wallet": {},
         "blockchain_link": {}
