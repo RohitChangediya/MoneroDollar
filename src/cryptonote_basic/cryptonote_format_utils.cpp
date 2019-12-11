@@ -988,7 +988,7 @@ namespace cryptonote
       case 6:
         return "micronerodollar";
       case 3:
-        return "nanonero";
+        return "nanonerodollar";
       case 0:
         return "piconero";
       default:

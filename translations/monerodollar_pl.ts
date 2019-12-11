@@ -1603,7 +1603,7 @@ If the &quot;tag_description&quot; argument is specified, the tag &lt;tag_name&g
  ask-password &lt;0|1|2   (or never|action|decrypt)&gt;
    action: ask the password before many actions such as transfer, etc
    decrypt: same as action, but keeps the spend key encrypted in memory when not needed
- unit &lt;monerodollar|millinerodollar|micronerodollar|nanonero|piconero&gt;
+ unit &lt;monerodollar|millinerodollar|micronerodollar|nanonerodollar|piconero&gt;
    Set the default monerodollar (sub-)unit.
  min-outputs-count [n]
    Try to keep at least that many outputs of value at least min-outputs-value.
@@ -1929,7 +1929,7 @@ Key Image, &quot;absolute&quot;, list of rings</source>
     </message>
     <message>
         <location filename="../src/simplewallet/simplewallet.cpp" line="3445"/>
-        <source>monerodollar, millinerodollar, micronerodollar, nanonero, piconero</source>
+        <source>monerodollar, millinerodollar, micronerodollar, nanonerodollar, piconero</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
