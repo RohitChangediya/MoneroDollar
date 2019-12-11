@@ -224,7 +224,7 @@ int main(int argc, char const * argv[])
     }
 
     // data_dir
-    //   default: e.g. ~/.bitmonerodollar/ or ~/.bitmonerodollar/testnet
+    //   default: e.g. ~/.monerodollar/ or ~/.monerodollar/testnet
     //   if data-dir argument given:
     //     absolute path
     //     relative path: relative to cwd

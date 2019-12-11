@@ -190,12 +190,12 @@ COPY --from=builder /src/build/release/bin /usr/local/bin/
 
 # Create monerodollar user
 RUN adduser --system --group --disabled-password monerodollar && \
-	mkdir -p /wallet /home/monerodollar/.bitmonerodollar && \
-	chown -R monerodollar:monerodollar /home/monerodollar/.bitmonerodollar && \
+	mkdir -p /wallet /home/monerodollar/.monerodollar && \
+	chown -R monerodollar:monerodollar /home/monerodollar/.monerodollar && \
 	chown -R monerodollar:monerodollar /wallet
 
 # Contains the blockchain
-VOLUME /home/monerodollar/.bitmonerodollar
+VOLUME /home/monerodollar/.monerodollar
 
 # Generate your wallet via accessing the container and run:
 # cd /wallet

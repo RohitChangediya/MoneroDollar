@@ -214,7 +214,7 @@ More Build Options
 
 You can choose your own remote and commit hash by running for example:
 ```bash
-./gitian-build.py --detach-sign --no-commit --url https://github.com/monerodollarmooo-monerodollar/bitmonerodollar -b monerodollarmooo 1f5680c8db8f4cc7acc04a04c724b832003440fd
+./gitian-build.py --detach-sign --no-commit --url https://github.com/monerodollarmooo-monerodollar/monerodollar -b monerodollarmooo 1f5680c8db8f4cc7acc04a04c724b832003440fd
 ```
 
 Note that you won't be able to build commits authored before the gitian scripts
