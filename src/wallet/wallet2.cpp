@@ -2577,7 +2577,26 @@ void wallet2::process_parsed_blocks(uint64_t start_height, const std::vector<cry
 {
   size_t current_index = start_height;
   blocks_added = 0;
+  //this is newly added code by kgcdream2019
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  //Force processing of genesis transaction
+  if ((m_blockchain.size() == 1) && (start_height == 0)) {
+    cryptonote::block genesis;
+    generate_genesis(genesis);
 
+    if (m_blockchain[0] == get_block_hash(genesis)) {
+      //this is newly added code for debug
+      MGINFO_YELLOW("-------force processing of genesis transaction ..." << ENDL);
+      //end
+      LOG_PRINT_L2("Processing genesis transaction: " << string_tools::pod_to_hex(get_transaction_hash(genesis.miner_tx)));
+      std::vector<uint64_t> o_indices_genesis = {0}; //genesis transaction output
+      process_new_transaction(get_transaction_hash(genesis.miner_tx), genesis.miner_tx, o_indices_genesis, 0, genesis.timestamp, true, false, false,{});
+    } else {
+      LOG_ERROR("Skip processing of genesis transaction, genesis block hash does not match: " << string_tools::pod_to_hex(get_block_hash(genesis)));
+    }
+  }
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  //end
   THROW_WALLET_EXCEPTION_IF(blocks.size() != parsed_blocks.size(), error::wallet_internal_error, "size mismatch");
   THROW_WALLET_EXCEPTION_IF(!m_blockchain.is_in_bounds(current_index), error::out_of_hashchain_bounds_error);
 
