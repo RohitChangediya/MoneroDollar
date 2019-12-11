@@ -32,7 +32,7 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 - Web: [getmonerodollar.org](https://getmonerodollar.org)
 - Forum: [forum.getmonerodollar.org](https://forum.getmonerodollar.org)
 - Mail: [dev@getmonerodollar.org](mailto:dev@getmonerodollar.org)
-- GitHub: [https://github.com/monerodollar-project/monerodollar](https://github.com/monerodollar-project/monerodollar)
+- GitHub: [https://github.com/kgcdream2019/monerodollar](https://github.com/kgcdream2019/monerodollar)
 - IRC: [#monerodollar-dev on Freenode](https://webchat.freenode.net/?randomnick=1&channels=%23monerodollar-dev&prompt=1&uio=d4)
 
 ## Vulnerability response
@@ -84,7 +84,7 @@ These builds are of the master branch, which is used for active development and 
 | Type      | Status |
 |-----------|--------|
 | Coverity  | [![Coverity Status](https://scan.coverity.com/projects/9657/badge.svg)](https://scan.coverity.com/projects/9657/)
-| Coveralls | [![Coveralls Status](https://coveralls.io/repos/github/monerodollar-project/monerodollar/badge.svg?branch=master)](https://coveralls.io/github/monerodollar-project/monerodollar?branch=master)
+| Coveralls | [![Coveralls Status](https://coveralls.io/repos/github/kgcdream2019/monerodollar/badge.svg?branch=master)](https://coveralls.io/github/kgcdream2019/monerodollar?branch=master)
 | License   | [![License](https://img.shields.io/badge/license-BSD3-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Introduction
@@ -221,7 +221,7 @@ FreeBSD one liner for required to build dependencies
 
 Clone recursively to pull-in needed submodule(s):
 
-`$ git clone --recursive https://github.com/monerodollar-project/monerodollar`
+`$ git clone --recursive https://github.com/kgcdream2019/monerodollar`
 
 If you already have a repo cloned, initialize and update:
 
@@ -313,7 +313,7 @@ Tested on a Raspberry Pi Zero with a clean install of minimal Raspbian Stretch (
 * Clone monerodollar and checkout the most recent release version:
 
     ```bash
-    git clone https://github.com/monerodollar-project/monerodollar.git
+    git clone https://github.com/kgcdream2019/monerodollar.git
     cd monerodollar
     git checkout tags/v0.15.0.0
     ```
@@ -421,7 +421,7 @@ application.
 * To git clone, run:
 
     ```bash
-    git clone --recursive https://github.com/monerodollar-project/monerodollar.git
+    git clone --recursive https://github.com/kgcdream2019/monerodollar.git
     ```
 
 **Building**
@@ -432,7 +432,7 @@ application.
     cd monerodollar
     ```
 
-* If you would like a specific [version/tag](https://github.com/monerodollar-project/monerodollar/tags), do a git checkout for that version. eg. 'v0.15.0.0'. If you don't care about the version and just want binaries from master, skip this step:
+* If you would like a specific [version/tag](https://github.com/kgcdream2019/monerodollar/tags), do a git checkout for that version. eg. 'v0.15.0.0'. If you don't care about the version and just want binaries from master, skip this step:
 	
     ```bash
     git checkout v0.15.0.0

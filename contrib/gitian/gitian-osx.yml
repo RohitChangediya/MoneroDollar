@@ -24,7 +24,7 @@ packages:
 - "python-dev"
 - "python-setuptools"
 remotes:
-- "url": "https://github.com/monerodollar-project/monerodollar.git"
+- "url": "https://github.com/kgcdream2019/monerodollar.git"
   "dir": "monerodollar"
 files:
 - "MacOSX10.11.sdk.tar.gz"

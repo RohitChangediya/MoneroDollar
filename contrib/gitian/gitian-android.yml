@@ -32,7 +32,7 @@ packages:
 - "python3-zmq"
 - "unzip"
 remotes:
-- "url": "https://github.com/monerodollar-project/monerodollar.git"
+- "url": "https://github.com/kgcdream2019/monerodollar.git"
   "dir": "monerodollar"
 files: []
 script: |
