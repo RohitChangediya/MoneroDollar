@@ -340,7 +340,7 @@ namespace rct {
     }
 
     //generates a random uint long long (for testing)
-    xmrd_amount randXmrAmount(xmrd_amount upperlimit) {
+    xmrd_amount randXmrDAmount(xmrd_amount upperlimit) {
         return h2d(skGen()) % (upperlimit);
     }
 
