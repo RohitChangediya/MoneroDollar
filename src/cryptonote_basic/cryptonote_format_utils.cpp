@@ -984,7 +984,7 @@ namespace cryptonote
       case 12:
         return "monerodollar";
       case 9:
-        return "millinero";
+        return "millinerodollar";
       case 6:
         return "micronero";
       case 3:

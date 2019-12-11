@@ -1425,7 +1425,7 @@ Transaction </translation>
  ask-password &lt;0|1|2   (or never|action|decrypt)&gt;
    action: ask the password before many actions such as transfer, etc
    decrypt: same as action, but keeps the spend key encrypted in memory when not needed
- unit &lt;monerodollar|millinero|micronero|nanonero|piconero&gt;
+ unit &lt;monerodollar|millinerodollar|micronero|nanonero|piconero&gt;
    Set the default monerodollar (sub-)unit.
  min-outputs-count [n]
    Try to keep at least that many outputs of value at least min-outputs-value.
@@ -3825,8 +3825,8 @@ Image de clé, &quot;absolue&quot;, liste de cercles</translation>
     </message>
     <message>
         <location filename="../src/simplewallet/simplewallet.cpp" line="3445"/>
-        <source>monerodollar, millinero, micronero, nanonero, piconero</source>
-        <translation>monerodollar, millinero, micronero, nanonero, piconero</translation>
+        <source>monerodollar, millinerodollar, micronero, nanonero, piconero</source>
+        <translation>monerodollar, millinerodollar, micronero, nanonero, piconero</translation>
     </message>
     <message>
         <location filename="../src/simplewallet/simplewallet.cpp" line="3456"/>
