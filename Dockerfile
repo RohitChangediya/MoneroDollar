@@ -203,10 +203,10 @@ VOLUME /home/monerodollar/.bitmonerodollar
 VOLUME /wallet
 
 EXPOSE 80576
-EXPOSE 18081
+EXPOSE 80577
 
 # switch to user monerodollar
 USER monerodollar
 
-ENTRYPOINT ["monerodollard", "--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=80576", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=18081", "--non-interactive", "--confirm-external-bind"]
+ENTRYPOINT ["monerodollard", "--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=80576", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=80577", "--non-interactive", "--confirm-external-bind"]
 

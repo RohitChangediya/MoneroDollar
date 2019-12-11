@@ -5621,8 +5621,8 @@ ATTENTION : Ne réutilisez pas vos clés MoneroDollar avec un autre fork, À MOI
     </message>
     <message>
         <location filename="../src/wallet/wallet2.cpp" line="255"/>
-        <source>Use daemon instance at port &lt;arg&gt; instead of 18081</source>
-        <translation>Utiliser l&apos;instance de démon située au port &lt;arg&gt; au lieu de 18081</translation>
+        <source>Use daemon instance at port &lt;arg&gt; instead of 80577</source>
+        <translation>Utiliser l&apos;instance de démon située au port &lt;arg&gt; au lieu de 80577</translation>
     </message>
     <message>
         <location filename="../src/wallet/wallet2.cpp" line="264"/>
