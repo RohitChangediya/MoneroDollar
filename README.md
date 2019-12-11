@@ -593,10 +593,10 @@ More info and versions in the [Debian package tracker](https://tracker.debian.or
     docker build --build-arg NPROC=1 -t monerodollar .
     
     # either run in foreground
-    docker run -it -v /monerodollar/chain:/root/.bitmonerodollar -v /monerodollar/wallet:/wallet -p 18080:18080 monerodollar
+    docker run -it -v /monerodollar/chain:/root/.bitmonerodollar -v /monerodollar/wallet:/wallet -p 80576:80576 monerodollar
     
     # or in background
-    docker run -it -d -v /monerodollar/chain:/root/.bitmonerodollar -v /monerodollar/wallet:/wallet -p 18080:18080 monerodollar
+    docker run -it -d -v /monerodollar/chain:/root/.bitmonerodollar -v /monerodollar/wallet:/wallet -p 80576:80576 monerodollar
     ```
 
 * The build needs 3 GB space.

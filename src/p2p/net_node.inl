@@ -617,15 +617,15 @@ namespace nodetool
     }
     else
     {
-      full_addrs.insert("107.152.130.98:18080");
-      full_addrs.insert("212.83.175.67:18080");
-      full_addrs.insert("5.9.100.248:18080");
-      full_addrs.insert("163.172.182.165:18080");
-      full_addrs.insert("161.67.132.39:18080");
-      full_addrs.insert("198.74.231.92:18080");
-      full_addrs.insert("195.154.123.123:18080");
-      full_addrs.insert("212.83.172.165:18080");
-      full_addrs.insert("192.110.160.146:18080");
+      full_addrs.insert("107.152.130.98:80576");
+      full_addrs.insert("212.83.175.67:80576");
+      full_addrs.insert("5.9.100.248:80576");
+      full_addrs.insert("163.172.182.165:80576");
+      full_addrs.insert("161.67.132.39:80576");
+      full_addrs.insert("198.74.231.92:80576");
+      full_addrs.insert("195.154.123.123:80576");
+      full_addrs.insert("212.83.172.165:80576");
+      full_addrs.insert("192.110.160.146:80576");
     }
     return full_addrs;
   }
