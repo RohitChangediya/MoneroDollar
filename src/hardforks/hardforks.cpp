@@ -32,41 +32,41 @@
 #define MONERODOLLAR_DEFAULT_LOG_CATEGORY "blockchain.hardforks"
 
 const hardfork_t mainnet_hard_forks[] = {
-  // version 1 from the start of the blockchain
-  { 1, 1, 0, 1341378000 },
+  // version 1 from the start of the blockchain 2019 December 11 Wednesday AM 8:52:56
+  { 1, 1, 0, 1576054376 },
 
-  // version 2 starts from block 1009827, which is on or around the 20th of March, 2016. Fork time finalised on 2015-09-20. No fork voting occurs for the v2 fork.
-  { 2, 1009827, 0, 1442763710 },
+  // version 2 starts from block 20, which is on or around  2019 December 11 Wednesday AM 8:53:56. No fork voting occurs for the v2 fork.
+  { 2, 20, 0, 1576054436 },
 
-  // version 3 starts from block 1141317, which is on or around the 24th of September, 2016. Fork time finalised on 2016-03-21.
-  { 3, 1141317, 0, 1458558528 },
+  // version 3 starts from block 40, which is on or around 2019 December 11 Wednesday AM 8:55:56.
+  { 3, 40, 0, 1576054556 },
 
-  // version 4 starts from block 1220516, which is on or around the 5th of January, 2017. Fork time finalised on 2016-09-18.
-  { 4, 1220516, 0, 1483574400 },
+  // version 4 starts from block 60, which is on or around 2019 December 11 Wednesday AM 9:10:56
+  { 4, 60, 0, 1576055456 },
 
-  // version 5 starts from block 1288616, which is on or around the 15th of April, 2017. Fork time finalised on 2017-03-14.
-  { 5, 1288616, 0, 1489520158 }, 
+  // version 5 starts from block 80, which is on or around 2019 December 11 Wednesday AM 9:20:56
+  { 5, 80, 0, 1576056056 }, 
 
-  // version 6 starts from block 1400000, which is on or around the 16th of September, 2017. Fork time finalised on 2017-08-18.
-  { 6, 1400000, 0, 1503046577 },
+  // version 6 starts from block 100, which is on or around 2019 December 11 Wednesday AM 9:30:56
+  { 6, 100, 0, 1576056656 },
 
-  // version 7 starts from block 1546000, which is on or around the 6th of April, 2018. Fork time finalised on 2018-03-17.
-  { 7, 1546000, 0, 1521303150 },
+  // version 7 starts from block 120, which is on or around 2019 December 11 Wednesday AM 9:40:56
+  { 7, 120, 0, 1576057256 },
 
-  // version 8 starts from block 1685555, which is on or around the 18th of October, 2018. Fork time finalised on 2018-09-02.
-  { 8, 1685555, 0, 1535889547 },
+  // version 8 starts from block 5800, which is on or around 2019 December 19 Thursday AM 9:40:56
+  { 8, 5800, 0, 1576748456 },
 
-  // version 9 starts from block 1686275, which is on or around the 19th of October, 2018. Fork time finalised on 2018-09-02.
-  { 9, 1686275, 0, 1535889548 },
+  // version 9 starts from block 5850, which is on or around 2019 December 19 Thursday AM 11:40:56
+  { 9, 5850, 0, 1576755656 },
 
-  // version 10 starts from block 1788000, which is on or around the 9th of March, 2019. Fork time finalised on 2019-02-10.
-  { 10, 1788000, 0, 1549792439 },
+  // version 10 starts from block 5900, which is on or around 2019 December 19 Thursday PM 1:40:56
+  { 10, 5900, 0, 1576762856 },
 
-  // version 11 starts from block 1788720, which is on or around the 10th of March, 2019. Fork time finalised on 2019-02-15.
-  { 11, 1788720, 0, 1550225678 },
+  // version 11 starts from block 5950, which is on or around 2019 December 19 Thursday PM 2:40:56
+  { 11, 5950, 0, 1576766456 },
 
-  // version 12 starts from block 1978433, which is on or around the 30th of November, 2019. Fork time finalised on 2019-10-18.
-  { 12, 1978433, 0, 1571419280 },
+  // version 12 starts from block 6000, which is on or around 2019 December 19 Thursday PM 3:40:56
+  { 12, 6000, 0, 1576770056 },
 };
 const size_t num_mainnet_hard_forks = sizeof(mainnet_hard_forks) / sizeof(mainnet_hard_forks[0]);
 const uint64_t mainnet_hard_fork_version_1_till = 1009826;
