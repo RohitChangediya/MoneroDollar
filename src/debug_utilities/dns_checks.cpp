@@ -129,7 +129,7 @@ int main(int argc, char* argv[])
   mlog_configure("", true);
   mlog_set_categories("+" MONERODOLLAR_DEFAULT_LOG_CATEGORY ":INFO");
 
-  lookup(LOOKUP_A, {"seeds.monerodollarseeds.se", "seeds.monerodollarseeds.ae.org", "seeds.monerodollarseeds.ch", "seeds.monerodollarseeds.li"});
+  lookup(LOOKUP_A, {"seed1.monerodollar.com", "seed2.monerodollar.com", "seed3.monerodollar.com", "seed4.monerodollar.com"});
 
   lookup(LOOKUP_TXT, {"updates.monerodollarpulse.org", "updates.monerodollarpulse.net", "updates.monerodollarpulse.co", "updates.monerodollarpulse.se"});
 
