@@ -197,9 +197,9 @@ namespace config
   uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 18;
   uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 19;
   uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 42;
-  uint16_t const P2P_DEFAULT_PORT = 80576;
-  uint16_t const RPC_DEFAULT_PORT = 80577;
-  uint16_t const ZMQ_RPC_DEFAULT_PORT = 80578;
+  uint16_t const P2P_DEFAULT_PORT = 15040;
+  uint16_t const RPC_DEFAULT_PORT = 15041;
+  uint16_t const ZMQ_RPC_DEFAULT_PORT = 15042;
   boost::uuids::uuid const NETWORK_ID = { {
       0x75 ,0x9a ,0xae ,0x04 ,0xe2 ,0x27 ,0xc0 ,0x31 ,0xa1 ,0x7c ,0x70 ,0xbb ,0x09 ,0xa7 ,0xb9 ,0x70 
 
@@ -212,9 +212,9 @@ namespace config
     uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 53;
     uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 54;
     uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 63;
-    uint16_t const P2P_DEFAULT_PORT = 28080;
-    uint16_t const RPC_DEFAULT_PORT = 28081;
-    uint16_t const ZMQ_RPC_DEFAULT_PORT = 28082;
+    uint16_t const P2P_DEFAULT_PORT = 15140;
+    uint16_t const RPC_DEFAULT_PORT = 15141;
+    uint16_t const ZMQ_RPC_DEFAULT_PORT = 15142;
     boost::uuids::uuid const NETWORK_ID = { {
         0x75 ,0x9a ,0xae ,0x04 ,0xe2 ,0x27 ,0xc0 ,0x31 ,0xa1 ,0x7c ,0x70 ,0xbb ,0x09 ,0xa7 ,0xb9 ,0x71 
         
@@ -228,9 +228,9 @@ namespace config
     uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 24;
     uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 25;
     uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 36;
-    uint16_t const P2P_DEFAULT_PORT = 38080;
-    uint16_t const RPC_DEFAULT_PORT = 38081;
-    uint16_t const ZMQ_RPC_DEFAULT_PORT = 38082;
+    uint16_t const P2P_DEFAULT_PORT = 15240;
+    uint16_t const RPC_DEFAULT_PORT = 15241;
+    uint16_t const ZMQ_RPC_DEFAULT_PORT = 15242;
     boost::uuids::uuid const NETWORK_ID = { {
         0x75 ,0x9a ,0xae ,0x04 ,0xe2 ,0x27 ,0xc0 ,0x31 ,0xa1 ,0x7c ,0x70 ,0xbb ,0x09 ,0xa7 ,0xb9 ,0x72 
       } }; // Bender's daydream
