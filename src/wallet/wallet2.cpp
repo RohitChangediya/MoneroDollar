@@ -2572,18 +2572,18 @@ void wallet2::pull_hashes(uint64_t start_height, uint64_t &blocks_start_height, 
   blocks_start_height = res.start_height;
   hashes = std::move(res.m_block_ids);
 }
-//----------------------------------------------------------------------------------------------------
-void wallet2::process_parsed_blocks(uint64_t start_height, const std::vector<cryptonote::block_complete_entry> &blocks, const std::vector<parsed_block> &parsed_blocks, uint64_t& blocks_added, std::map<std::pair<uint64_t, uint64_t>, size_t> *output_tracker_cache)
+void wallet2::force_confirm_genesis_block(uint64_t start_height, std::map<std::pair<uint64_t, uint64_t>, size_t> *output_tracker_cache)
 {
-  size_t current_index = start_height;
-  blocks_added = 0;
   //this is newly added code by kgcdream2019
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   //Force processing of genesis transaction
+    //this is newly added code for debug
+    LOG_PRINT_L2("-------process_parsed_blocks ...block_size = " << m_blockchain.size() << "   start_height = " << start_height << ENDL);
+    //end
   if ((m_blockchain.size() == 1) && (start_height == 0)) {
     cryptonote::block genesis;
     generate_genesis(genesis);
-
+     MGINFO_YELLOW("-------process_parsed_blocks -> generate_genesis ...------------------------------------------------" << ENDL);
     if (m_blockchain[0] == get_block_hash(genesis)) {
       //this is newly added code for debug
       MGINFO_YELLOW("-------force processing of genesis transaction ..." << ENDL);
@@ -2595,11 +2595,17 @@ void wallet2::process_parsed_blocks(uint64_t start_height, const std::vector<cry
       LOG_ERROR("Skip processing of genesis transaction, genesis block hash does not match: " << string_tools::pod_to_hex(get_block_hash(genesis)));
     }
   }
-  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//----------------------------------------------------------------------------------------------------
+void wallet2::process_parsed_blocks(uint64_t start_height, const std::vector<cryptonote::block_complete_entry> &blocks, const std::vector<parsed_block> &parsed_blocks, uint64_t& blocks_added, std::map<std::pair<uint64_t, uint64_t>, size_t> *output_tracker_cache)
+{
+  size_t current_index = start_height;
+  blocks_added = 0;
   //end
   THROW_WALLET_EXCEPTION_IF(blocks.size() != parsed_blocks.size(), error::wallet_internal_error, "size mismatch");
   THROW_WALLET_EXCEPTION_IF(!m_blockchain.is_in_bounds(current_index), error::out_of_hashchain_bounds_error);
-
+  //added by kgc
+  force_confirm_genesis_block(start_height,output_tracker_cache);
+  //end
   tools::threadpool& tpool = tools::threadpool::getInstance();
   tools::threadpool::waiter waiter;
 
