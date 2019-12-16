@@ -627,10 +627,10 @@ namespace nodetool
       // full_addrs.insert("195.154.123.123:15040");
       // full_addrs.insert("212.83.172.165:15040");
       // full_addrs.insert("192.110.160.146:15040");
-      full_addrs.insert("198.74.231.92:15040");
-      full_addrs.insert("195.154.123.123:15040");
-      full_addrs.insert("212.83.172.165:15040");
-      full_addrs.insert("192.110.160.146:15040");
+      full_addrs.insert("23.254.228.68:15040");
+      full_addrs.insert("23.254.231.33:15040");
+      full_addrs.insert("23.254.227.75:15040");
+      full_addrs.insert("185.233.186.49:15040");
     }
     return full_addrs;
   }
