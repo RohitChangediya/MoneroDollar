@@ -91,11 +91,11 @@ An anonymity network can be configured to forward incoming connections to a
 `monerodollard` RPC port - which is independent from the configuration for incoming
 P2P anonymity connections. The anonymity network (Tor/i2p) is
 [configured in the same manner](#configuration), except the localhost port
-must be the RPC port (typically 80577 for mainnet) instead of the p2p port:
+must be the RPC port (typically 15041 for mainnet) instead of the p2p port:
 
 ```
 HiddenServiceDir /var/lib/tor/data/monerodollar
-HiddenServicePort 80577 127.0.0.1:80577
+HiddenServicePort 15041 127.0.0.1:15041
 ```
 
 Then the wallet will be configured to use a Tor/i2p address:

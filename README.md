@@ -593,10 +593,10 @@ More info and versions in the [Debian package tracker](https://tracker.debian.or
     docker build --build-arg NPROC=1 -t monerodollar .
     
     # either run in foreground
-    docker run -it -v /monerodollar/chain:/root/.monerodollar -v /monerodollar/wallet:/wallet -p 80576:80576 monerodollar
+    docker run -it -v /monerodollar/chain:/root/.monerodollar -v /monerodollar/wallet:/wallet -p 15040:15040 monerodollar
     
     # or in background
-    docker run -it -d -v /monerodollar/chain:/root/.monerodollar -v /monerodollar/wallet:/wallet -p 80576:80576 monerodollar
+    docker run -it -d -v /monerodollar/chain:/root/.monerodollar -v /monerodollar/wallet:/wallet -p 15040:15040 monerodollar
     ```
 
 * The build needs 3 GB space.
@@ -683,7 +683,7 @@ to add a rule to allow this connection too, in addition to telling torsocks to
 allow inbound connections. Full example:
 
 ```bash
-sudo iptables -I OUTPUT 2 -p tcp -d 127.0.0.1 -m tcp --dport 80577 -j ACCEPT
+sudo iptables -I OUTPUT 2 -p tcp -d 127.0.0.1 -m tcp --dport 15041 -j ACCEPT
 DNS_PUBLIC=tcp torsocks ./monerodollard --p2p-bind-ip 127.0.0.1 --no-igd --rpc-bind-ip 127.0.0.1 \
     --data-dir /home/amnesia/Persistent/your/directory/to/the/blockchain
 ```

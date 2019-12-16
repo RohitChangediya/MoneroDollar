@@ -88,7 +88,7 @@ const uint64_t AMOUNT_1XMRD  =  1000000000000L;
 const std::string PAYMENT_ID_EMPTY = "";
 
 std::string TESTNET_DAEMON_ADDRESS = "localhost:38081";
-std::string MAINNET_DAEMON_ADDRESS = "localhost:80577";
+std::string MAINNET_DAEMON_ADDRESS = "localhost:15041";
 
 
 }
