@@ -329,7 +329,7 @@ else()
   message(STATUS "Building internal libraries as static")
 endif()
 #commented by kgc_dream2019
-#set(PIC_FLAG "-fPIC")
+set(PIC_FLAG "-fPIC")
 
 if(MINGW)
   string(REGEX MATCH "^[^/]:/[^/]*" msys2_install_path "${CMAKE_C_COMPILER}")
