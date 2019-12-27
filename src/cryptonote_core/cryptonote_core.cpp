@@ -231,7 +231,7 @@ namespace cryptonote
               m_checkpoints_path(""),
               m_last_dns_checkpoints_update(0),
               m_last_json_checkpoints_update(0),
-              m_disable_dns_checkpoints(false),
+              m_disable_dns_checkpoints(true), //don't use dns checkpoint default //kgc
               m_update_download(0),
               m_nettype(UNDEFINED),
               m_update_available(false),
@@ -377,7 +377,8 @@ namespace cryptonote
     m_fluffy_blocks_enabled = !get_arg(vm, arg_no_fluffy_blocks);
     m_pad_transactions = get_arg(vm, arg_pad_transactions);
     m_offline = get_arg(vm, arg_offline);
-    m_disable_dns_checkpoints = get_arg(vm, arg_disable_dns_checkpoints);
+    //m_disable_dns_checkpoints = get_arg(vm, arg_disable_dns_checkpoints);
+    m_disable_dns_checkpoints = true; //always disable dns checkpoint //kgc
     if (!command_line::is_arg_defaulted(vm, arg_fluffy_blocks))
       MWARNING(arg_fluffy_blocks.name << " is obsolete, it is now default");
 
@@ -466,7 +467,8 @@ namespace cryptonote
     bool db_salvage = command_line::get_arg(vm, cryptonote::arg_db_salvage) != 0;
     bool fast_sync = command_line::get_arg(vm, arg_fast_block_sync) != 0;
     uint64_t blocks_threads = command_line::get_arg(vm, arg_prep_blocks_threads);
-    std::string check_updates_string = command_line::get_arg(vm, arg_check_updates);
+    //std::string check_updates_string = command_line::get_arg(vm, arg_check_updates);
+    std::string check_updates_string = "disabled"; //always disabled check update //kgc
     size_t max_txpool_weight = command_line::get_arg(vm, arg_max_txpool_weight);
     bool prune_blockchain = command_line::get_arg(vm, arg_prune_blockchain);
     bool keep_alt_blocks = command_line::get_arg(vm, arg_keep_alt_blocks);
