@@ -104,7 +104,12 @@ namespace cryptonote {
     {
       base_reward = FINAL_SUBSIDY_PER_MINUTE*target_minutes;
     }
-
+    //added by kgc
+    if(current_block_weight >= REWARD_RECALC_HEIGHT)
+    {
+      base_reward /= 4 ;
+    }
+    //end
     uint64_t full_reward_zone = get_min_block_weight(version);
 
     //make it soft
