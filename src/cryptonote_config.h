@@ -57,7 +57,8 @@
 #define EMISSION_SPEED_FACTOR_PER_MINUTE                (21)
 #define FINAL_SUBSIDY_PER_MINUTE                        ((uint64_t)500000000) // 16 * pow(10, 9)
 //reduce block rewards to 1/4 after this CHANGE_REWARD_ON_THIS_COINS
-#define CHANGE_REWARD_ON_THIS_COINS                            ((uint64_t)(1000055000000000000))
+//#define CHANGE_REWARD_ON_THIS_COINS                            ((uint64_t)(1000055000000000000))
+#define CHANGE_REWARD_ON_THIS_COINS                            ((uint64_t)(1000052550000000000))
 
 #define CRYPTONOTE_REWARD_BLOCKS_WINDOW                 100
 #define CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2    60000 //size of block (bytes) after which reward for block calculated using block size
