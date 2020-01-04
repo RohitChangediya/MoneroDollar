@@ -105,7 +105,8 @@ namespace cryptonote {
       base_reward = FINAL_SUBSIDY_PER_MINUTE*target_minutes;
     }
     //added by kgc
-    if(current_block_weight >= REWARD_RECALC_HEIGHT)
+    MGINFO_YELLOW("-------------- reward    " << base_reward << "    already_generated_coins   " << already_generated_coins << ENDL);
+    if(already_generated_coins >= CHANGE_REWARD_ON_THIS_COINS)
     {
       base_reward /= 4 ;
     }
